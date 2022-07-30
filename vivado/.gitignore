@@ -1,0 +1,17 @@
+*.bda
+*.bxml
+*_ooc.xdc
+*.xsa
+
+*.cache
+*.hw/
+*.runs/
+
+hw_handoff/
+ip/
+ipshared/
+sim
+synth/
+
+*.jou
+*.log
