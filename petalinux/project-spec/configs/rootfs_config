@@ -4100,6 +4100,11 @@ CONFIG_Init-manager-systemd=y
 # CONFIG_Init-manager-sysvinit is not set
 
 #
+# apps 
+#
+CONFIG_mytest=y
+
+#
 # user packages 
 #
 # CONFIG_gpio-demo is not set
