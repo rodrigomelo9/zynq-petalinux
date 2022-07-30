@@ -16,3 +16,13 @@
 * File -> Export -> Export Hardware (include bitstream)
   * It will generate the needed `.xsa` file
 * Close Vivado
+
+## Build Linux
+
+```
+source /<PETALINUX_INSTALLATION>/settings.sh
+cd petalinux
+petalinux-config --get-hw-description=../vivado/
+petalinux-build
+petalinux-package --boot --u-boot --fpga images/linux/system.bit --force
+```
