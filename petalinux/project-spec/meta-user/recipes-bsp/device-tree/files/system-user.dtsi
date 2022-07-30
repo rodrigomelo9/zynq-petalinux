@@ -1,3 +1,25 @@
 /include/ "system-conf.dtsi"
 / {
+    chosen {
+        bootargs = "earlycon clk_ignore_unused uio_pdrv_genirq.of_id=generic-uio";
+        stdout-path = "serial0:115200n8";
+    };
+    memory {
+        device_type = "memory";
+        reg = <0x0 0x0 0x0 0x80000000>, <0x0 0xA0002000 0x0 0x2000>, <0x00000008 0x00000000 0x0 0x80000000>;
+    };
+    reserved-memory {
+        ranges;
+        reserved {
+            reg = <0x0 0xA0002000 0x0 0x2000>;
+        };
+    };
+};
+
+&axi_bram_ctrl_0 {
+    compatible = "generic-uio";
+};
+
+&axi_bram_ctrl_1 {
+    compatible = "generic-uio";
 };
