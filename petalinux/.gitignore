@@ -1,0 +1,18 @@
+# Added when the project is created
+
+*/*/config.old
+*/*/rootfs_config.old
+build/
+images/linux/
+pre-built/linux/
+.petalinux/
+!.petalinux/metadata
+*.o
+*.jou
+*.log
+/components/plnx_workspace
+/components/yocto
+
+# Added by me
+
+project-spec/hw-description
