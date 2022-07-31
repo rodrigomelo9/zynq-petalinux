@@ -55,10 +55,10 @@ int main(int argc, char *argv[]) {
   for (i=0; i<4; i++)
     data[i] = *(volatile uint32_t*)ptr;
   for (i=0; i<4; i++)
-    printf(                         \
-      "0x%08x (diff = %0d)\n",      \
-      (uint32_t)data[i],            \
-      (i>0) ? data[i]-data[i-1] : 0 \
+    printf(                                             \
+      "0x%08x (diff = %d)\n",                           \
+      (uint32_t)data[i],                                \
+      (i>0) ? (uint32_t)(data[i]-data[i-1]) : 0         \
     );
 
   //---------------------------------------------------------------------------
@@ -68,11 +68,11 @@ int main(int argc, char *argv[]) {
   for (i=0; i<4; i++)
     data[i] = *(volatile uint64_t*)ptr;
   for (i=0; i<4; i++)
-    printf(                         \
-      "0x%08x%08x (diff = %0d)\n",  \
-      (uint32_t)(data[i]>>32),      \
-      (uint32_t)data[i],            \
-      (i>0) ? data[i]-data[i-1] : 0 \
+    printf(                                             \
+      "0x%08x%08x (diff = %d)\n",                       \
+      (uint32_t)(data[i]>>32),                          \
+      (uint32_t)data[i],                                \
+      (i>0) ? (uint32_t)(data[i]-data[i-1]) : 0         \
     );
 
   //---------------------------------------------------------------------------
@@ -83,10 +83,10 @@ int main(int argc, char *argv[]) {
     data[i] = *(volatile uint128_t*)ptr;
   for (i=0; i<4; i++)
     printf(                                             \
-      "0x%08x%08x%08x%08x (diff = %0d)\n",              \
+      "0x%08x%08x%08x%08x (diff = %d)\n",               \
       (uint32_t)(data[i]>>96), (uint32_t)(data[i]>>64), \
       (uint32_t)(data[i]>>32), (uint32_t)data[i],       \
-      (i>0) ? data[i]-data[i-1] : 0                     \
+      (i>0) ? (uint32_t)(data[i]-data[i-1]) : 0         \
     );
 
   //---------------------------------------------------------------------------

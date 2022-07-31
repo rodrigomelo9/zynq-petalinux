@@ -73,26 +73,24 @@ petalinux:~$ sudo devmem 0xA0004000 8
 
 ## Custom app (mytest) example session
 
-> **WARNING:** it is WIP
-
 ```
 $ sudo mytest /dev/mem 0xA0004000
 ADDR=0xa0004000 PAGE_SIZE=0x00001000 PAGE_ADDR=0xa0004000 PAGE_OFFSET=0x00000000
 
 * 32-bits
-0xa3a966af (diff = 0)
-0xa3a966db (diff = 0)
-0xa3a96707 (diff = 0)
-0xa3a96733 (diff = 0)
+0xae7483b0 (diff = 0)
+0xae7483dc (diff = 44)
+0xae748408 (diff = 44)
+0xae748434 (diff = 44)
 * 64-bits
-0xb3a983bda3a983bd (diff = 0)
-0xb3a983e9a3a983e9 (diff = 44)
-0xb3a98415a3a98415 (diff = 44)
-0xb3a98441a3a98441 (diff = 44)
+0xbe74976bae74976b (diff = 0)
+0xbe749797ae749797 (diff = 44)
+0xbe7497c3ae7497c3 (diff = 44)
+0xbe7497efae7497ef (diff = 44)
 * 128-bits
-0xd3a996e9c3a996e9b3a996e9a3a996e9 (diff = 0)
-0xd3a99715c3a99715b3a99715a3a99715 (diff = 44)
-0xd3a99741c3a99741b3a99741a3a99741 (diff = 44)
-0xd3a9976dc3a9976db3a9976da3a9976d (diff = 44)
+0xde74aa0cce74aa0cbe74aa0cae74aa0c (diff = 0)
+0xde74aa38ce74aa38be74aa38ae74aa38 (diff = 44)
+0xde74aa64ce74aa64be74aa64ae74aa64 (diff = 44)
+0xde74aa90ce74aa90be74aa90ae74aa90 (diff = 44)
 * The End
 ```
