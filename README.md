@@ -1,6 +1,6 @@
 # Zynq Petalinux Example
 
-> **WARNING:** it is WIP and I'm learning Petalinux
+> **WARNING:** it is WIP and I'm doing my first steps with Petalinux
 
 * Tools version: 2022.1
 * Board: ZCU102 (Zynq US+)
@@ -48,9 +48,9 @@ sync
 * Power ON.
 * Login with:
   * User: petalinux
-  * Pass: <should be set on first boot>
+  * Pass: <by default, you need to specify a new one in each boot>
 
-## devmem example
+## devmem example session
 
 ```
 petalinux:~$ sudo devmem 0xA0000000 64 0x1122334455667788
@@ -69,4 +69,30 @@ petalinux:~$ sudo devmem 0xA0004000 16
 0x0AEB
 petalinux:~$ sudo devmem 0xA0004000 8
 0xFA
+```
+
+## Custom app (mytest) example session
+
+> **WARNING:** it is WIP
+
+```
+$ sudo mytest /dev/mem 0xA0004000
+ADDR=0xa0004000 PAGE_SIZE=0x00001000 PAGE_ADDR=0xa0004000 PAGE_OFFSET=0x00000000
+
+* 32-bits
+0xa3a966af (diff = 0)
+0xa3a966db (diff = 0)
+0xa3a96707 (diff = 0)
+0xa3a96733 (diff = 0)
+* 64-bits
+0xb3a983bda3a983bd (diff = 0)
+0xb3a983e9a3a983e9 (diff = 44)
+0xb3a98415a3a98415 (diff = 44)
+0xb3a98441a3a98441 (diff = 44)
+* 128-bits
+0xd3a996e9c3a996e9b3a996e9a3a996e9 (diff = 0)
+0xd3a99715c3a99715b3a99715a3a99715 (diff = 44)
+0xd3a99741c3a99741b3a99741a3a99741 (diff = 44)
+0xd3a9976dc3a9976db3a9976da3a9976d (diff = 44)
+* The End
 ```
